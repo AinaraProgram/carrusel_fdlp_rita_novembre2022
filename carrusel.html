@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Carrusel</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <img id="chibiConan" src="./img/chibiConan.jpg" />
+            <span id="tema">CARRUSEL D'IMATGES.</span>
+            <img id="chibiSakura" src="./img/chibiSakura.jpg" />
+            <br>
+            <button id="afegir">Afegeix imatge</button>
+        </div>
+        <p>
+            <img id="imatge" src="./img/boku no hero.jpg" alt="Fotos d'animes">
+            <div id="descrip">
+                <span id="nom"></span> <br>
+                <span id="autor"></span> <br>
+                <span id="desc"></span> <br>
+            </div>
+            <button id="retrocedir" onclick="retrocedeix()">Retrocedir</button>
+            <button id="avançar" onclick="avança()">Avançar</button>
+        </p>
+    </div>
+
+    <br>
+
+<footer id="signat"><span id="peu">&copy Ainara Niño</span></footer>
+
+    <script src="./js/imatges.js"></script>
+    <script src="./js/carruselObjectes.js"></script>
+    <script src="./js/operacions.js"></script>
+    
+</body>
+</html>
