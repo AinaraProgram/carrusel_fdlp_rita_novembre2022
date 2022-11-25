@@ -13,13 +13,13 @@ header {
    padding-top: 0.10em;
 }
 
-#chibiConan{
+/* #chibiConan{
    width: 30px;
 }
 
 #chibiSakura{
    width: 30px;
-}
+} */
 
 
 #tema {font-weight: lighter; margin-bottom: 0px; color: rgb(201, 201, 201); font-size: 40px; text-decoration: underline;}
@@ -45,7 +45,7 @@ h2 {color: deeppink;}
 }
 
 #imatge {
-   width: 700px;
+   width: 620px;
    border: 15px solid lightsteelblue;
 }
 
@@ -59,6 +59,18 @@ h2 {color: deeppink;}
 }
 
 #afegir{
+   cursor: pointer;
+   background-color: pink;
+   box-shadow: 3px 3px rgba(226, 226, 226, 0.187);
+}
+
+#esborrar{
+   cursor: pointer;
+   background-color: pink;
+   box-shadow: 3px 3px rgba(226, 226, 226, 0.187);
+}
+
+#modificar{
    cursor: pointer;
    background-color: pink;
    box-shadow: 3px 3px rgba(226, 226, 226, 0.187);
@@ -90,13 +102,26 @@ h2 {color: deeppink;}
 
 #descrip{
    background-color: antiquewhite;
-   padding-bottom: 5px;
    width: 600px;
-   text-align: center;
-   
+   padding: 10px;
+   margin: 0 auto;
+   margin-inline: 20px;
+   border: 15px solid rgb(222, 221, 176);
+
 }
 
 #nom{
- color:brown;  
- text-decoration: underline;
+   color:brown;  
+   text-decoration: underline;
+   margin-bottom: -10px;
+   margin-top: -5px;
+}
+
+#subnom{
+   color: brown;
+   text-decoration: underline;
+}
+
+#desc{
+   text-align: justify !important;
 }
