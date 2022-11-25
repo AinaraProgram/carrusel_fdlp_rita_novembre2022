@@ -8,19 +8,25 @@ mostraImatge();
 function mostraImatge(){
     let imatgeMostrar = RUTA + imatges[posicioActual].imatge;
     let nom = imatges[posicioActual].nom;
+    let subnom = imatges[posicioActual].subnom;
     let autor = imatges[posicioActual].autor;
     let desc = imatges[posicioActual].descripcio;
 
     document.getElementById("imatge").src = imatgeMostrar;
-    document.getElementById("autor").autor = autor;
     document.getElementById("imatge").desc = desc;
     document.getElementById("imatge").alt = nom;
+
+    document.getElementById("autor").innerHTML = autor;
+
     document.getElementById("nom").innerHTML = nom;
+
+    document.getElementById("subnom").innerHTML = subnom;
+
     document.getElementById("desc").innerHTML = desc;
 }
 
 function avança(){
-    if(posicioActual >= imatges.length-1 && posicioActual >= text.length-1 && posicioActual >= autor.length-1){
+    if(posicioActual >= imatges.length-1){
         posicioActual = 0;
     } else {
         posicioActual++;
@@ -30,7 +36,7 @@ function avança(){
 
 function retrocedeix(){
     if(posicioActual == 0){
-        posicioActual = imatges.length-1 && text.length-1;
+        posicioActual = imatges.length-1;
     } else {
         posicioActual--;
     }
