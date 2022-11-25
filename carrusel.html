@@ -10,19 +10,23 @@
 <body>
     <div id="container">
         <div>
-            <img id="chibiConan" src="./img/chibiConan.jpg" />
+            <!-- <img id="chibiConan" src="./img/chibiConan.jpg" /> -->
             <span id="tema">CARRUSEL D'IMATGES.</span>
-            <img id="chibiSakura" src="./img/chibiSakura.jpg" />
+            <!-- <img id="chibiSakura" src="./img/chibiSakura.jpg" /> -->
             <br>
-            <button id="afegir">Afegeix imatge</button>
+            <button id="afegir" onclick="afegir()">Afegeix la imatge</button>
+            <button id="esborrar" onclick="esborrar()">Esborra la imatge</button>
+            <button id="modificar" onclick="modificar()">Modifica la imatge</button>
         </div>
         <p>
             <img id="imatge" src="./img/boku no hero.jpg" alt="Fotos d'animes">
             <div id="descrip">
-                <span id="nom"></span> <br>
-                <span id="autor"></span> <br>
-                <span id="desc"></span> <br>
+                <p id="nom"></p>
+                <p id="subnom"></p>
+                <p><b><u>Autor</u>: </b><span id="autor"></span></p>
+                <p id="desc"></p>
             </div>
+            <br>
             <button id="retrocedir" onclick="retrocedeix()">Retrocedir</button>
             <button id="avançar" onclick="avança()">Avançar</button>
         </p>
@@ -32,6 +36,7 @@
 
 <footer id="signat"><span id="peu">&copy Ainara Niño</span></footer>
 
+    <script>"use strict;"</script>
     <script src="./js/imatges.js"></script>
     <script src="./js/carruselObjectes.js"></script>
     <script src="./js/operacions.js"></script>
