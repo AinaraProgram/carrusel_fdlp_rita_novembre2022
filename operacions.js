@@ -1,127 +1,98 @@
-body {   
-   margin: auto;
-   font-family: 'Nunito', 'Open Sans';
-   background-image: url("../img/fons_background.png");
-   background-attachment: fixed;  
+function buscar(valor){//Dragon Ball
+    let trobat = false;
+    let index = -1;
+    let i = 0;
+    let voltes = imatges.length;//10
+
+    while (i < voltes && !trobat){ //Dragon Ball
+        if(valor == imatges[i].nom){//Dragon Ball
+            index = i;//index = 4
+            trobat = true;
+        }
+        i++;
+    }
+    return index;
 }
 
-header {
-   position: fixed; 
-   top: 0;
-   width: fit-content;
-   background-color: rgb(104, 104, 104); 
-   padding-top: 0.10em;
+
+function afegir(){
+    let varNom = prompt("Indica el nom de la imatge: ", "Best Anime");
+    let index = buscar(varNom);
+
+    if (index <= 0){
+        let varImatge = prompt("Indica el nom de la imatge png (sense l'extensió): ", "best_anime") + ".png";
+        let varNom = prompt("Indica el nom que li posaràs a la imatge: ", "Best Anime");
+        let varAutor = prompt("Indica l'autor de la imatge: ", "Horikoshi Kōhei");
+        let varDescripcio = prompt("Escriu una breu descripció: ", "Boku no Hero Academia és un manga molt popular tant al Japó com a la resta del món.");
+
+        const imatgeInsercio = 
+        {
+            imatge: varImatge,
+            nom: varNom,
+            autor: varAutor,
+            descripcio: varDescripcio,
+        }
+        imatges.push(imatgeInsercio);
+        posicioActual = imatges.length -1;
+        mostraImatge();
+    } else {
+        alert("La imatge ja existeix!");
+        posicioActual = index;
+        mostraImatge();
+    }
 }
 
-/* #chibiConan{
-   width: 30px;
+
+function esborrar(){
+    let imatgeEliminar = prompt("Quina imatge vols eliminar? "); //nom de la imatge = Dragon Ball
+    let index = buscar(imatgeEliminar);
+
+    if(index >= 0){
+        posicioActual = index;
+        mostraImatge();
+
+        let confirmar = confirm("N'estàs del tot segur/a que vols eliminar-la?");
+        if(confirmar){
+            imatges.splice(index, 1);
+            mostraImatge();
+        }
+    } else {
+        alert ("Aquesta imatge no existeix!");
+    }
 }
 
-#chibiSakura{
-   width: 30px;
-} */
 
+function modificar(){
+    let imatgeModificar = prompt("Quina imatge vols modificar? ");//Dragon Ball.
+    let index = buscar(imatgeModificar);
 
-#tema {font-weight: lighter; margin-bottom: 0px; color: rgb(201, 201, 201); font-size: 40px; text-decoration: underline;}
-h2 {color: deeppink;}
+    if(index >=0){
+        posicioActual = index;
+        mostraImatge();
 
-#nomImatge{
-   font-weight: bolder;
+        let confirmar = confirm("Vols modificar la imatge? ");
+        if (confirmar){
+            console.log(imatges);
+             let imatgeNova = prompt("Quina imatge vols ara? ", imatges[index].imatge);//6 posició de l'array
+             let nomNou = prompt("Quin nom li posem? ", imatges[index].nom);
+             let subnomNou = prompt("Com s'escriu el títol en japonès? ", imatges[index].subnom);
+             let autorNou = prompt("Quina autor ha fet l'obra? ", imatges[index].autor);
+             let descripcioNova = prompt("Escriu una breu descripció ", imatges[index].descripcio);
+
+             const totNou = {
+                imatge: imatgeNova,
+                nom: nomNou,
+                subnom: subnomNou,
+                autor: autorNou,
+                descripcio: descripcioNova
+             }
+            //posicioActual = imatgeNova;
+            imatges.splice(index, 1, totNou);//el machacador
+            mostraImatge();
+
+        }
+    } else {
+        alert ("Aquesta imatge no existeix!");
+    }
 }
 
-.repro {cursor: pointer; background:none; padding: 0px; margin-left: 2em; border: 0px;}
-
-#container {
-   width: fit-content;
-   margin: auto;
-   margin-top: 2em;
-   background-color: rgb(64, 64, 64);
-   padding-bottom: 0.5em;
-   text-align: center;
-   box-shadow: 3px 5px rgba(0, 0, 0, 0.187);
-}
-#container p, h1{
-   text-align: center;
-}
-
-#imatge {
-   width: 620px;
-   border: 15px solid lightsteelblue;
-}
-
-#nomImatge {
-   /* background-color: yellow; */
-   width: 20em;
-   text-align: center;
-   font-weight: bold;
-   font-size: 110%;
-   color: rgb(201, 201, 201);
-}
-
-#afegir{
-   cursor: pointer;
-   background-color: pink;
-   box-shadow: 3px 3px rgba(226, 226, 226, 0.187);
-}
-
-#esborrar{
-   cursor: pointer;
-   background-color: pink;
-   box-shadow: 3px 3px rgba(226, 226, 226, 0.187);
-}
-
-#modificar{
-   cursor: pointer;
-   background-color: pink;
-   box-shadow: 3px 3px rgba(226, 226, 226, 0.187);
-}
-
-#retrocedir{
-   cursor: pointer;
-   background-color: pink;
-   box-shadow: 3px 3px rgba(226, 226, 226, 0.187);
-}
-
-#avançar{
-   cursor: pointer;
-   background-color: pink;
-   box-shadow: 3px 3px rgba(226, 226, 226, 0.187);
-}
-
-#signat{
-   text-align: center;
-   width: 100%;
-   
-}
-
-#peu{
-   color: rgb(201, 201, 201);
-   background-color: rgb(64, 64, 64);
-
-}
-
-#descrip{
-   background-color: antiquewhite;
-   width: 600px;
-   padding: 10px;
-   margin: 0 auto;
-   margin-inline: 20px;
-   border: 15px solid rgb(222, 221, 176);
-
-}
-
-#nom{
-   color:brown;  
-   text-decoration: underline;
-   margin-bottom: -10px;
-   margin-top: -5px;
-}
-
-#subnom{
-   color: brown;
-   text-decoration: underline;
-}
-
-#desc{
-   text-align: justify !important;
-}
